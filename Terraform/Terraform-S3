@@ -1,0 +1,39 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-2"
+}
+
+resource "aws_s3_bucket" "terra-bucket-298" {
+  bucket = "my-terra-bucket-298"
+}
+resource "aws_s3_bucket_acl" "terra-bucket-298-acl" {
+  bucket = aws_s3_bucket.terra-bucket-298.id
+  acl    = "public-read-write"
+}
+resource "aws_s3_bucket_versioning" "terra-bucket-versioning" {
+  bucket = aws_s3_bucket.terra-bucket-298.id
+  versioning_configuration {
+    status = "Enabled"
+}
+
+resource "aws_s3_object" "terra-object-298" {
+  bucket = "terra-bucket-298"
+  key    = "new_object_key"
+  source = "Book11"
+
+  # The filemd5() function is available in Terraform 0.11.12 and later
+  # For Terraform 0.11.11 and earlier, use the md5() function and the file() function:
+  # etag = "${md5(file("Book11"))}"
+  etag = filemd5("Book11")
+}
+
+expected acl to be one of [private public-read public-read-write authenticated-read aws-exec-read log-delivery-write], got public
