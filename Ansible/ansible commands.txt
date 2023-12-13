@@ -1,0 +1,20 @@
+ansible all --list-hosts  to display all the hosts attached to ansible server
+ansible webserver --list-hosts   to display all the hosts attached to the specific group
+ansible webservers[0] --list-hosts   to display first host under a group
+ansible webservers[1] --list-hosts   to display second host under a group
+ansible webservers[0:1] --list-hosts  to display first two hosts under a group
+
+
+ansible webservers -a "sudo yum install git -y" 
+
+ansible webservers -a "sudo yum install docker -y"    or
+
+ansible webservers -b -a "yum install docker -y"
+
+ansible webservers[0] -b -m service -a 'name=docker state=started'
+
+ansible webservers -b -m service -a 'name=docker state=started'
+
+ansible webservers -b -m yum -a "pkg=httpd state=latest"  -----absent, installed, latest, present, removed
+
+ansible webservers -b -m copy -a 'src=file4 dest=/tmp/'
