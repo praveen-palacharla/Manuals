@@ -1,0 +1,131 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fmodern Consolas;}{\f1\fnil\fcharset129 Courier New;}}
+{\colortbl ;\red20\green20\blue20;\red142\green142\blue142;\red170\green85\blue85;\red18\green124\blue155;\red170\green64\blue64;\red85\green85\blue85;\red170\green51\blue170;}
+\viewkind4\uc1\pard\f0\fs20 root@ip-172-31-21-111:~# kubectl describe po pvdeploy\cf1\highlight2 
+\par \cf0\highlight0 Name:             pvdeploy-844559756d-xgxk2\cf1\highlight2 
+\par \cf0\highlight0 Namespace:        default\cf1\highlight2 
+\par \cf0\highlight0 Priority:         0\cf1\highlight2 
+\par \cf0\highlight0 Service Account:  default\cf1\highlight2 
+\par \cf0\highlight0 Node:             <none>\cf1\highlight2 
+\par \cf0\highlight0 Labels:           app=mypv\cf1\highlight2 
+\par \cf0\highlight0                   pod-template-hash=844559756d\cf1\highlight2 
+\par \cf0\highlight0 Annotations:      <none>\cf1\highlight2 
+\par \cf0\highlight0 Status:           Pending\cf1\highlight2 
+\par \cf0\highlight0 IP:\cf1\highlight2 
+\par \cf0\highlight0 IPs:              <none>\cf1\highlight2 
+\par \cf0\highlight0 Controlled By:    ReplicaSet/pvdeploy-844559756d\cf1\highlight2 
+\par \cf0\highlight0 Containers:\cf1\highlight2 
+\par \cf0\highlight0   shell:\cf1\highlight2 
+\par \cf0\highlight0     Image:      centos\cf1\highlight2 
+\par \cf0\highlight0     Port:       <none>\cf1\highlight2 
+\par \cf0\highlight0     Host Port:  <none>\cf1\highlight2 
+\par \cf0\highlight0     Command:\cf1\highlight2 
+\par \cf0\highlight0       bin/bash\cf1\highlight2 
+\par \cf0\highlight0       -c\cf1\highlight2 
+\par \cf0\highlight0       sleep 10000\cf1\highlight2 
+\par \cf0\highlight0     Environment:  <none>\cf1\highlight2 
+\par \cf0\highlight0     Mounts:\cf1\highlight2 
+\par \cf0\highlight0       /tmp/persistent from mypd (rw)\cf1\highlight2 
+\par \cf0\highlight0       /var/run/secrets/kubernetes.io/serviceaccount from kube-api-access-rgcdx (ro)\cf1\highlight2 
+\par \cf0\highlight0 Conditions:\cf1\highlight2 
+\par \cf0\highlight0   Type           Status\cf1\highlight2 
+\par \cf0\highlight0   PodScheduled   False\cf1\highlight2 
+\par \cf0\highlight0 Volumes:\cf1\highlight2 
+\par \cf0\highlight0   mypd:\cf1\highlight2 
+\par \cf0\highlight0     Type:       PersistentVolumeClaim (a reference to a PersistentVolumeClaim in the same namespace)\cf1\highlight2 
+\par \cf0\highlight0     ClaimName:  myebsvil-claim\cf1\highlight2 
+\par \cf0\highlight0     ReadOnly:   false\cf1\highlight2 
+\par \cf0\highlight0   kube-api-access-rgcdx:\cf1\highlight2 
+\par \cf0\highlight0     Type:                    Projected (a volume that contains injected data from multiple sources)\cf1\highlight2 
+\par \cf0\highlight0     TokenExpirationSeconds:  3607\cf1\highlight2 
+\par \cf0\highlight0     ConfigMapName:           kube-root-ca.crt\cf1\highlight2 
+\par \cf0\highlight0     ConfigMapOptional:       <nil>\cf1\highlight2 
+\par \cf0\highlight0     DownwardAPI:             true\cf1\highlight2 
+\par \cf0\highlight0 QoS Class:                   BestEffort\cf1\highlight2 
+\par \cf0\highlight0 Node-Selectors:              <none>\cf1\highlight2 
+\par \cf0\highlight0 Tolerations:                 node.kubernetes.io/not-ready:NoExecute op=Exists for 300s\cf1\highlight2 
+\par \cf0\highlight0                              node.kubernetes.io/unreachable:NoExecute op=Exists for 300s\cf1\highlight2 
+\par \cf0\highlight0 Events:\cf1\highlight2 
+\par \cf0\highlight0   Type     Reason            Age   From               Message\cf1\highlight2 
+\par \cf0\highlight0   ----     ------            ----  ----               -------\cf1\highlight2 
+\par \cf0\highlight0   Warning  FailedScheduling  69s   default-scheduler  0/1 nodes are available: 1 persistentvolumeclaim "myebsvil-claim" not found. preemption: 0/1 nodes are available: 1 Preemption is not helpful for scheduling.\cf1\highlight2 
+\par 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy -c shell bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 Error from server (NotFound): pods "pvdeploy" not found\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-844559756d-xgxk2   0/1     Pending   0          2m34s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-844559756d-xgxk2 -c shell bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 Error from server (BadRequest): pod pvdeploy-844559756d-xgxk2 does not have a host assigned\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-844559756d-xgxk2   0/1     Pending   0          3m1s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-844559756d-xgxk2 -c shell -- bash\cf1\highlight2 
+\par \cf0\highlight0 Error from server (BadRequest): pod pvdeploy-844559756d-xgxk2 does not have a host assigned\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# ls\cf1\highlight2 
+\par \cf0\highlight0 kubectl  kubectl.sha256  minikube-linux-amd64  \cf3 minikube_latest_amd64.deb\cf0   pvc-pod.yaml  pvclaim.yaml  pvolume.yaml  \cf4 snap\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-844559756d-xgxk2 -c shell -- bash\cf1\highlight2 
+\par \cf0\highlight0 Error from server (BadRequest): pod pvdeploy-844559756d-xgxk2 does not have a host assigned\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-844559756d-xgxk2 -c shell bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 Error from server (BadRequest): pod pvdeploy-844559756d-xgxk2 does not have a host assigned\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# ls\cf1\highlight2 
+\par \cf0\highlight0 kubectl  kubectl.sha256  minikube-linux-amd64  \cf3 minikube_latest_amd64.deb\cf0   pvc-pod.yaml  pvclaim.yaml  pvolume.yaml  \cf4 snap\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-844559756d-xgxk2 -c shell -- bash\cf1\highlight2 
+\par \cf0\highlight0 Error from server (BadRequest): pod pvdeploy-844559756d-xgxk2 does not have a host assigned\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get pods -o wide\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE     IP       NODE     NOMINATED NODE   READINESS GATES\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-844559756d-xgxk2   0/1     Pending   0          5m27s   <none>   <none>   <none>           <none>\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get pods -o wide\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE     IP       NODE     NOMINATED NODE   READINESS GATES\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-844559756d-xgxk2   0/1     Pending   0          5m50s   <none>   <none>   <none>           <none>\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# ls\cf1\highlight2 
+\par \cf0\highlight0 kubectl  kubectl.sha256  minikube-linux-amd64  \cf3 minikube_latest_amd64.deb\cf0   pvc-pod.yaml  pvclaim.yaml  pvolume.yaml  \cf4 snap\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# vi pvc-pod.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get pods\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-844559756d-xgxk2   0/1     Pending   0          7m46s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get deploy\cf1\highlight2 
+\par \cf0\highlight0 NAME       READY   UP-TO-DATE   AVAILABLE   AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy   0/1     1            0           7m55s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl delete deploy pvdeploy\cf1\highlight2 
+\par \cf0\highlight0 deployment.apps "pvdeploy" deleted\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl create -f pvc-pod.yaml\cf1\highlight2 
+\par \cf0\highlight0 deployment.apps/pvdeploy created\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po -o wide\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-6b767bf6c8-xsgcd   1/1     Running   0          8s    172.17.0.3   minikube   <none>           <none>\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-6b767bf6c8-xsgcd  -c shell -- bash\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd /]# ls\cf1\highlight2 
+\par \cf0\highlight0 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd /]# cd tmp/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd tmp]# ls\cf1\highlight2 
+\par \cf0\highlight0 ks-script-4luisyla  ks-script-o23i7rc2  ks-script-x6ei4wuu  persistent\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd tmp]# cd persistent/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# vi praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]#\cf1\highlight2 
+\par \cf5\highlight0 Remote side unexpectedly closed network connection\cf1\highlight2 
+\par 
+\par \cf6\highlight0\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\cf1\highlight2 
+\par 
+\par \cf5\highlight0 Session stopped\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 <return>\cf0  to exit tab\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 R\cf0  to restart session\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 S\cf0  to save terminal output to file\cf1\highlight2 
+\par 
+\par \cf5\highlight0 Network error: Connection timed out\cf1\highlight2 
+\par 
+\par \cf6\highlight0\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\cf1\highlight2 
+\par 
+\par \cf5\highlight0 Session stopped\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 <return>\cf0  to exit tab\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 R\cf0  to restart session\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf7 S\cf0  to save terminal output to file\cf1\highlight2 
+\par \pard\cf0\highlight0\f1 
+\par }
+ 

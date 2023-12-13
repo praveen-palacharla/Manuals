@@ -1,0 +1,885 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fmodern Consolas;}{\f1\fmodern\fcharset0 Consolas;}{\f2\fnil\fcharset129 Courier New;}}
+{\colortbl ;\red20\green20\blue20;\red142\green142\blue142;\red16\green158\blue98;\red148\green146\blue12;\red170\green51\blue170;\red170\green64\blue64;\red56\green136\blue159;}
+\viewkind4\uc1\pard\f0\fs20     \u9484?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9488?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                 \cf3\f1\bullet  MobaXterm Personal Edition v21.5 \bullet\cf0\f0                  \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?               \cf4 (SSH client, X server and network tools)\cf0                \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                                                                      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474? \u8594? SSH session to \cf5 ec2-user@52.27.228.115                    \cf0           \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  Direct SSH      :  \cf3\f0 v\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  SSH compression :  \cf3\f0 v\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  SSH-browser     :  \cf3\f0 v\cf0                                              \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?\f1    \bullet  X11-forwarding  :  \cf6\f0 x\cf0   (disabled or not supported by server)      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474?                                                                      \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9474? \u8594? For more info, ctrl+click on \cf7\ul help\cf0\ulnone  or visit our \cf7\ul website\cf0\ulnone .            \u9474?\cf1\highlight2 
+\par \cf0\highlight0     \u9492?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9496?\cf1\highlight2 
+\par 
+\par \cf0\highlight0 Last login: Thu Jul 21 06:10:48 2022 from 49.205.118.13\cf1\highlight2 
+\par 
+\par \cf0\highlight0        __|  __|_  )\cf1\highlight2 
+\par \cf0\highlight0        _|  (     /   Amazon Linux 2 AMI\cf1\highlight2 
+\par \cf0\highlight0       ___|\\___|___|\cf1\highlight2 
+\par 
+\par \cf0\highlight0 https://aws.amazon.com/amazon-linux-2/\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-24-0 ~]$ clear\cf1\highlight2 
+\par \cf0\highlight0 [ec2-user@ip-172-31-24-0 ~]$ sudo su\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker  network ls\cf1\highlight2 
+\par \cf0\highlight0 NETWORK ID     NAME      DRIVER    SCOPE\cf1\highlight2 
+\par \cf0\highlight0 95d167e13b48   bridge    bridge    local\cf1\highlight2 
+\par \cf0\highlight0 dfd9f46eeb36   host      host      local\cf1\highlight2 
+\par \cf0\highlight0 f18348f9d9d9   none      null      local\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# ~dockernetwork inspect bridge\cf1\highlight2 
+\par \cf0\highlight0 bash: ~dockernetwork: command not found\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# dockernetwork inspect bridge\cf1\highlight2 
+\par \cf0\highlight0 bash: dockernetwork: command not found\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker network inspect bridge\cf1\highlight2 
+\par \cf0\highlight0 [\cf1\highlight2 
+\par \cf0\highlight0     \{\cf1\highlight2 
+\par \cf0\highlight0         "Name": "bridge",\cf1\highlight2 
+\par \cf0\highlight0         "Id": "95d167e13b48baf7130c28c209ba5c224eda88689cb6a68622902604ecf80ead",\cf1\highlight2 
+\par \cf0\highlight0         "Created": "2022-07-21T05:50:34.393696769Z",\cf1\highlight2 
+\par \cf0\highlight0         "Scope": "local",\cf1\highlight2 
+\par \cf0\highlight0         "Driver": "bridge",\cf1\highlight2 
+\par \cf0\highlight0         "EnableIPv6": false,\cf1\highlight2 
+\par \cf0\highlight0         "IPAM": \{\cf1\highlight2 
+\par \cf0\highlight0             "Driver": "default",\cf1\highlight2 
+\par \cf0\highlight0             "Options": null,\cf1\highlight2 
+\par \cf0\highlight0             "Config": [\cf1\highlight2 
+\par \cf0\highlight0                 \{\cf1\highlight2 
+\par \cf0\highlight0                     "Subnet": "172.17.0.0/16"\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             ]\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Internal": false,\cf1\highlight2 
+\par \cf0\highlight0         "Attachable": false,\cf1\highlight2 
+\par \cf0\highlight0         "Ingress": false,\cf1\highlight2 
+\par \cf0\highlight0         "ConfigFrom": \{\cf1\highlight2 
+\par \cf0\highlight0             "Network": ""\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "ConfigOnly": false,\cf1\highlight2 
+\par \cf0\highlight0         "Containers": \{\cf1\highlight2 
+\par \cf0\highlight0             "4c4e4b235531e5308d7bb3035544b157fa7412eaa2c2cbfa07cc861e5fb9b68c": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "mycont2",\cf1\highlight2 
+\par \cf0\highlight0                 "EndpointID": "280c983e01f205bac5af4569725fc5b72141e4650b8dde3840215433cbedcbcf",\cf1\highlight2 
+\par \cf0\highlight0                 "MacAddress": "02:42:ac:11:00:03",\cf1\highlight2 
+\par \cf0\highlight0                 "IPv4Address": "172.17.0.3/16",\cf1\highlight2 
+\par \cf0\highlight0                 "IPv6Address": ""\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "mycont1",\cf1\highlight2 
+\par \cf0\highlight0                 "EndpointID": "0d62830e0c4f3c30503622b2562f4188677caf7e583967b7720fa2f0e99cf287",\cf1\highlight2 
+\par \cf0\highlight0                 "MacAddress": "02:42:ac:11:00:02",\cf1\highlight2 
+\par \cf0\highlight0                 "IPv4Address": "172.17.0.2/16",\cf1\highlight2 
+\par \cf0\highlight0                 "IPv6Address": ""\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Options": \{\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.bridge.default_bridge": "true",\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.bridge.enable_icc": "true",\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.bridge.enable_ip_masquerade": "true",\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.bridge.name": "docker0",\cf1\highlight2 
+\par \cf0\highlight0             "com.docker.network.driver.mtu": "1500"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Labels": \{\}\cf1\highlight2 
+\par \cf0\highlight0     \}\cf1\highlight2 
+\par \cf0\highlight0 ]\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# brctl show\cf1\highlight2 
+\par \cf0\highlight0 bridge name     bridge id               STP enabled     interfaces\cf1\highlight2 
+\par \cf0\highlight0 docker0         8000.0242835a7f67       no              veth0440496\cf1\highlight2 
+\par \cf0\highlight0                                                         vethe99f57b\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker network ls\cf1\highlight2 
+\par \cf0\highlight0 NETWORK ID     NAME      DRIVER    SCOPE\cf1\highlight2 
+\par \cf0\highlight0 95d167e13b48   bridge    bridge    local\cf1\highlight2 
+\par \cf0\highlight0 dfd9f46eeb36   host      host      local\cf1\highlight2 
+\par \cf0\highlight0 f18348f9d9d9   none      null      local\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker network create -d bridge mynetwork\cf1\highlight2 
+\par \cf0\highlight0 661f8879e95a8c7c61f0da8e25ea86d00d2d8c6c20048a23cad7eee834cb61d1\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker network ls\cf1\highlight2 
+\par \cf0\highlight0 NETWORK ID     NAME        DRIVER    SCOPE\cf1\highlight2 
+\par \cf0\highlight0 95d167e13b48   bridge      bridge    local\cf1\highlight2 
+\par \cf0\highlight0 dfd9f46eeb36   host        host      local\cf1\highlight2 
+\par \cf0\highlight0 661f8879e95a   mynetwork   bridge    local\cf1\highlight2 
+\par \cf0\highlight0 f18348f9d9d9   none        null      local\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker ps\cf1\highlight2 
+\par \cf0\highlight0 CONTAINER ID   IMAGE             COMMAND                  CREATED             STATUS             PORTS                 NAMES\cf1\highlight2 
+\par \cf0\highlight0\f1 4c4e4b235531   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   About an hour ago   Up About an hour   8080/tcp, 50000/tcp   mycont2\cf1\highlight2\f0 
+\par \cf0\highlight0\f1 e7b2a7374c13   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   About an hour ago   Up About an hour   8080/tcp, 50000/tcp   mycont1\cf1\highlight2\f0 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker network connect mynetwork mycont1\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker inspect mycont1\cf1\highlight2 
+\par \cf0\highlight0 [\cf1\highlight2 
+\par \cf0\highlight0     \{\cf1\highlight2 
+\par \cf0\highlight0         "Id": "e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e",\cf1\highlight2 
+\par \cf0\highlight0         "Created": "2022-07-21T06:04:07.494463195Z",\cf1\highlight2 
+\par \cf0\highlight0         "Path": "/usr/bin/tini",\cf1\highlight2 
+\par \cf0\highlight0         "Args": [\cf1\highlight2 
+\par \cf0\highlight0             "--",\cf1\highlight2 
+\par \cf0\highlight0             "/usr/local/bin/jenkins.sh",\cf1\highlight2 
+\par \cf0\highlight0             "/bin/bash"\cf1\highlight2 
+\par \cf0\highlight0         ],\cf1\highlight2 
+\par \cf0\highlight0         "State": \{\cf1\highlight2 
+\par \cf0\highlight0             "Status": "running",\cf1\highlight2 
+\par \cf0\highlight0             "Running": true,\cf1\highlight2 
+\par \cf0\highlight0             "Paused": false,\cf1\highlight2 
+\par \cf0\highlight0             "Restarting": false,\cf1\highlight2 
+\par \cf0\highlight0             "OOMKilled": false,\cf1\highlight2 
+\par \cf0\highlight0             "Dead": false,\cf1\highlight2 
+\par \cf0\highlight0             "Pid": 7586,\cf1\highlight2 
+\par \cf0\highlight0             "ExitCode": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Error": "",\cf1\highlight2 
+\par \cf0\highlight0             "StartedAt": "2022-07-21T06:12:24.66803515Z",\cf1\highlight2 
+\par \cf0\highlight0             "FinishedAt": "2022-07-21T06:11:56.864799648Z"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Image": "sha256:9689a0f7e06fc63b026ab4e9ed1e602476856d03b7a8f0da9514449c7069ade2",\cf1\highlight2 
+\par \cf0\highlight0         "ResolvConfPath": "/var/lib/docker/containers/e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e/resolv.conf",\cf1\highlight2 
+\par \cf0\highlight0         "HostnamePath": "/var/lib/docker/containers/e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e/hostname",\cf1\highlight2 
+\par \cf0\highlight0         "HostsPath": "/var/lib/docker/containers/e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e/hosts",\cf1\highlight2 
+\par \cf0\highlight0         "LogPath": "/var/lib/docker/containers/e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e/e7b2a7374c13bdbc8a1a58fa95806eb543bfd3817f733859aad2ee2e295b3f1e-json.log",\cf1\highlight2 
+\par \cf0\highlight0         "Name": "/mycont1",\cf1\highlight2 
+\par \cf0\highlight0         "RestartCount": 0,\cf1\highlight2 
+\par \cf0\highlight0         "Driver": "overlay2",\cf1\highlight2 
+\par \cf0\highlight0         "Platform": "linux",\cf1\highlight2 
+\par \cf0\highlight0         "MountLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "ProcessLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "AppArmorProfile": "",\cf1\highlight2 
+\par \cf0\highlight0         "ExecIDs": null,\cf1\highlight2 
+\par \cf0\highlight0         "HostConfig": \{\cf1\highlight2 
+\par \cf0\highlight0             "Binds": null,\cf1\highlight2 
+\par \cf0\highlight0             "ContainerIDFile": "",\cf1\highlight2 
+\par \cf0\highlight0             "LogConfig": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Type": "json-file",\cf1\highlight2 
+\par \cf0\highlight0                 "Config": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "NetworkMode": "default",\cf1\highlight2 
+\par \cf0\highlight0             "PortBindings": \{\},\cf1\highlight2 
+\par \cf0\highlight0             "RestartPolicy": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "no",\cf1\highlight2 
+\par \cf0\highlight0                 "MaximumRetryCount": 0\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "AutoRemove": false,\cf1\highlight2 
+\par \cf0\highlight0             "VolumeDriver": "",\cf1\highlight2 
+\par \cf0\highlight0             "VolumesFrom": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapDrop": null,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupnsMode": "host",\cf1\highlight2 
+\par \cf0\highlight0             "Dns": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsOptions": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsSearch": [],\cf1\highlight2 
+\par \cf0\highlight0             "ExtraHosts": null,\cf1\highlight2 
+\par \cf0\highlight0             "GroupAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "IpcMode": "private",\cf1\highlight2 
+\par \cf0\highlight0             "Cgroup": "",\cf1\highlight2 
+\par \cf0\highlight0             "Links": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomScoreAdj": 0,\cf1\highlight2 
+\par \cf0\highlight0             "PidMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "Privileged": false,\cf1\highlight2 
+\par \cf0\highlight0             "PublishAllPorts": false,\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyRootfs": false,\cf1\highlight2 
+\par \cf0\highlight0             "SecurityOpt": null,\cf1\highlight2 
+\par \cf0\highlight0             "UTSMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "UsernsMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "ShmSize": 67108864,\cf1\highlight2 
+\par \cf0\highlight0             "Runtime": "runc",\cf1\highlight2 
+\par \cf0\highlight0             "ConsoleSize": [\cf1\highlight2 
+\par \cf0\highlight0                 0,\cf1\highlight2 
+\par \cf0\highlight0                 0\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Isolation": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpuShares": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Memory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "NanoCpus": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupParent": "",\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeight": 0,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeightDevice": [],\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuQuota": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimePeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimeRuntime": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpusetCpus": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpusetMems": "",\cf1\highlight2 
+\par \cf0\highlight0             "Devices": [],\cf1\highlight2 
+\par \cf0\highlight0             "DeviceCgroupRules": null,\cf1\highlight2 
+\par \cf0\highlight0             "DeviceRequests": null,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemoryTCP": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemoryReservation": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwap": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwappiness": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomKillDisable": false,\cf1\highlight2 
+\par \cf0\highlight0             "PidsLimit": null,\cf1\highlight2 
+\par \cf0\highlight0             "Ulimits": [\cf1\highlight2 
+\par \cf0\highlight0                 \{\cf1\highlight2 
+\par \cf0\highlight0                     "Name": "nofile",\cf1\highlight2 
+\par \cf0\highlight0                     "Hard": 65536,\cf1\highlight2 
+\par \cf0\highlight0                     "Soft": 32768\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "CpuCount": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPercent": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumIOps": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumBandwidth": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MaskedPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/asound",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/acpi",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/kcore",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/keys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/latency_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_list",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sched_debug",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/scsi",\cf1\highlight2 
+\par \cf0\highlight0                 "/sys/firmware"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/bus",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/fs",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/irq",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sysrq-trigger"\cf1\highlight2 
+\par \cf0\highlight0             ]\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "GraphDriver": \{\cf1\highlight2 
+\par \cf0\highlight0             "Data": \{\cf1\highlight2 
+\par \cf0\highlight0                 "LowerDir": "/var/lib/docker/overlay2/44f58ad8b060cd2dc727ab32f1af061defad9e69c0cea5a6e8b77bc75ae384b8-init/diff:/var/lib/docker/overlay2/8730467e2729538706a03502cbf492b52fc9ed5bfadc05cd6d1f74a546d1fdcb/diff:/var/lib/docker/overlay2/5caa0487b5b1827c90591ac17061f64246377f1515d5e629fbe7e62a4e874d5c/diff:/var/lib/docker/overlay2/bc3d06c27f75d9109e8cd1ae7bb28f452c43376c9948e3c559b5887155c018ec/diff:/var/lib/docker/overlay2/ad3fc07ad6dd7eced123e76a5e1e0dd88e5d0ab90cb9bb4ea4721f983f7a6ae2/diff:/var/lib/docker/overlay2/c8957fe079984179e679fdbd3208c06338b4282e5cbbfe8377134618ff58200e/diff:/var/lib/docker/overlay2/c47de7a81ac2d4a308eb2629b8fe4ccf76ac285bcb1b6754769beeef1dba7e73/diff:/var/lib/docker/overlay2/844d519114b1ce757a1e95375a1c0738df27d8dc9fbc940e1d36abf92fdd76fb/diff:/var/lib/docker/overlay2/1fc804a60fc0698d9d2cd3895762504bdf319e9a434dd9207b49821b095abe09/diff:/var/lib/docker/overlay2/a59f7f1efb5015cb511932a502d9bb8816414ca28a1c79c68ea754621c8a7f22/diff:/var/lib/docker/overlay2/bde1773e9ff2142c68d744c4d0c81ebc5cdb99802302070afcb5b329009262d4/diff:/var/lib/docker/overlay2/07055b492853ada6b9faf6cdc599367670e78bc82a7798cf9b3e7dc141411f7b/diff:/var/lib/docker/overlay2/4f5775674ad832ed151ca9e6c12f4fffa1ecdd52a162aabeb572b5171646f7dd/diff:/var/lib/docker/overlay2/1a9e6177d204eaf0a092728a94d25de5df3d477d0346429e95c89a1d4034da3d/diff:/var/lib/docker/overlay2/f7268f69989d614ea10a727fc134a3773172850a55c52af6ed0acf85809692ed/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "MergedDir": "/var/lib/docker/overlay2/44f58ad8b060cd2dc727ab32f1af061defad9e69c0cea5a6e8b77bc75ae384b8/merged",\cf1\highlight2 
+\par \cf0\highlight0                 "UpperDir": "/var/lib/docker/overlay2/44f58ad8b060cd2dc727ab32f1af061defad9e69c0cea5a6e8b77bc75ae384b8/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "WorkDir": "/var/lib/docker/overlay2/44f58ad8b060cd2dc727ab32f1af061defad9e69c0cea5a6e8b77bc75ae384b8/work"\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Name": "overlay2"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Mounts": [\cf1\highlight2 
+\par \cf0\highlight0             \{\cf1\highlight2 
+\par \cf0\highlight0                 "Type": "volume",\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "56b2bea9faeb10fa72b5ea471970a34a8f2c4b7d51e4ea9594d061f2cdf055cf",\cf1\highlight2 
+\par \cf0\highlight0                 "Source": "/var/lib/docker/volumes/56b2bea9faeb10fa72b5ea471970a34a8f2c4b7d51e4ea9594d061f2cdf055cf/_data",\cf1\highlight2 
+\par \cf0\highlight0                 "Destination": "/var/jenkins_home",\cf1\highlight2 
+\par \cf0\highlight0                 "Driver": "local",\cf1\highlight2 
+\par \cf0\highlight0                 "Mode": "",\cf1\highlight2 
+\par \cf0\highlight0                 "RW": true,\cf1\highlight2 
+\par \cf0\highlight0                 "Propagation": ""\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         ],\cf1\highlight2 
+\par \cf0\highlight0         "Config": \{\cf1\highlight2 
+\par \cf0\highlight0             "Hostname": "e7b2a7374c13",\cf1\highlight2 
+\par \cf0\highlight0             "Domainname": "",\cf1\highlight2 
+\par \cf0\highlight0             "User": "jenkins",\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdin": true,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdout": true,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStderr": true,\cf1\highlight2 
+\par \cf0\highlight0             "ExposedPorts": \{\cf1\highlight2 
+\par \cf0\highlight0                 "50000/tcp": \{\},\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Tty": true,\cf1\highlight2 
+\par \cf0\highlight0             "OpenStdin": true,\cf1\highlight2 
+\par \cf0\highlight0             "StdinOnce": true,\cf1\highlight2 
+\par \cf0\highlight0             "Env": [\cf1\highlight2 
+\par \cf0\highlight0                 "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",\cf1\highlight2 
+\par \cf0\highlight0                 "LANG=C.UTF-8",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_HOME=/var/jenkins_home",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_SLAVE_AGENT_PORT=50000",\cf1\highlight2 
+\par \cf0\highlight0                 "REF=/usr/share/jenkins/ref",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_VERSION=2.360",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_UC=https://updates.jenkins.io",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals",\cf1\highlight2 
+\par \cf0\highlight0                 "COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log",\cf1\highlight2 
+\par \cf0\highlight0                 "JAVA_HOME=/opt/java/openjdk"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Cmd": [\cf1\highlight2 
+\par \cf0\highlight0                 "/bin/bash"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Image": "jenkins/jenkins",\cf1\highlight2 
+\par \cf0\highlight0             "Volumes": \{\cf1\highlight2 
+\par \cf0\highlight0                 "/var/jenkins_home": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "WorkingDir": "",\cf1\highlight2 
+\par \cf0\highlight0             "Entrypoint": [\cf1\highlight2 
+\par \cf0\highlight0                 "/usr/bin/tini",\cf1\highlight2 
+\par \cf0\highlight0                 "--",\cf1\highlight2 
+\par \cf0\highlight0                 "/usr/local/bin/jenkins.sh"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "OnBuild": null,\cf1\highlight2 
+\par \cf0\highlight0             "Labels": \{\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.description": "The Jenkins Continuous Integration and Delivery server",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.licenses": "MIT",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.revision": "f73612cb9fa21a24f9c5bf3a1afc2ef1804690ee",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.source": "https://github.com/jenkinsci/docker",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.title": "Official Jenkins Docker image",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.url": "https://www.jenkins.io/",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.vendor": "Jenkins project",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.version": "2.360"\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "NetworkSettings": \{\cf1\highlight2 
+\par \cf0\highlight0             "Bridge": "",\cf1\highlight2 
+\par \cf0\highlight0             "SandboxID": "401a6ba9b981807493b917969e89e59f209c88c6059f73a0561bc0d76e4245ae",\cf1\highlight2 
+\par \cf0\highlight0             "HairpinMode": false,\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Ports": \{\cf1\highlight2 
+\par \cf0\highlight0                 "50000/tcp": null,\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": null\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "SandboxKey": "/var/run/docker/netns/401a6ba9b981",\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPAddresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPv6Addresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "EndpointID": "0d62830e0c4f3c30503622b2562f4188677caf7e583967b7720fa2f0e99cf287",\cf1\highlight2 
+\par \cf0\highlight0             "Gateway": "172.17.0.1",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IPAddress": "172.17.0.2",\cf1\highlight2 
+\par \cf0\highlight0             "IPPrefixLen": 16,\cf1\highlight2 
+\par \cf0\highlight0             "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0             "MacAddress": "02:42:ac:11:00:02",\cf1\highlight2 
+\par \cf0\highlight0             "Networks": \{\cf1\highlight2 
+\par \cf0\highlight0                 "bridge": \{\cf1\highlight2 
+\par \cf0\highlight0                     "IPAMConfig": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Links": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Aliases": null,\cf1\highlight2 
+\par \cf0\highlight0                     "NetworkID": "95d167e13b48baf7130c28c209ba5c224eda88689cb6a68622902604ecf80ead",\cf1\highlight2 
+\par \cf0\highlight0                     "EndpointID": "0d62830e0c4f3c30503622b2562f4188677caf7e583967b7720fa2f0e99cf287",\cf1\highlight2 
+\par \cf0\highlight0                     "Gateway": "172.17.0.1",\cf1\highlight2 
+\par \cf0\highlight0                     "IPAddress": "172.17.0.2",\cf1\highlight2 
+\par \cf0\highlight0                     "IPPrefixLen": 16,\cf1\highlight2 
+\par \cf0\highlight0                     "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0                     "MacAddress": "02:42:ac:11:00:02",\cf1\highlight2 
+\par \cf0\highlight0                     "DriverOpts": null\cf1\highlight2 
+\par \cf0\highlight0                 \},\cf1\highlight2 
+\par \cf0\highlight0                 "mynetwork": \{\cf1\highlight2 
+\par \cf0\highlight0                     "IPAMConfig": \{\},\cf1\highlight2 
+\par \cf0\highlight0                     "Links": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Aliases": [\cf1\highlight2 
+\par \cf0\highlight0                         "e7b2a7374c13"\cf1\highlight2 
+\par \cf0\highlight0                     ],\cf1\highlight2 
+\par \cf0\highlight0                     "NetworkID": "661f8879e95a8c7c61f0da8e25ea86d00d2d8c6c20048a23cad7eee834cb61d1",\cf1\highlight2 
+\par \cf0\highlight0                     "EndpointID": "8355579993c6a8cf19869fd2c86c4ae391d2011bf36a278b26841c4cde5a4365",\cf1\highlight2 
+\par \cf0\highlight0                     "Gateway": "172.18.0.1",\cf1\highlight2 
+\par \cf0\highlight0                     "IPAddress": "172.18.0.2",\cf1\highlight2 
+\par \cf0\highlight0                     "IPPrefixLen": 16,\cf1\highlight2 
+\par \cf0\highlight0                     "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0                     "MacAddress": "02:42:ac:12:00:02",\cf1\highlight2 
+\par \cf0\highlight0                     "DriverOpts": \{\}\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \}\cf1\highlight2 
+\par \cf0\highlight0     \}\cf1\highlight2 
+\par \cf0\highlight0 ]\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker images\cf1\highlight2 
+\par \cf0\highlight0 REPOSITORY        TAG       IMAGE ID       CREATED        SIZE\cf1\highlight2 
+\par \cf0\highlight0 jenkins/jenkins   latest    9689a0f7e06f   42 hours ago   462MB\cf1\highlight2 
+\par \cf0\highlight0 myown-image       v1        9689a0f7e06f   42 hours ago   462MB\cf1\highlight2 
+\par \cf0\highlight0 tomee             latest    a3e6e1133a38   8 days ago     361MB\cf1\highlight2 
+\par \cf0\highlight0 tomcat            latest    451d25ef4583   3 weeks ago    483MB\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker run -dit --name mycont4 --network=mynetwork myown-image\cf1\highlight2 
+\par \cf0\highlight0 Unable to find image 'myown-image:latest' locally\cf1\highlight2 
+\par \cf0\highlight0 docker: Error response from daemon: pull access denied for myown-image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.\cf1\highlight2 
+\par \cf0\highlight0 See 'docker run --help'.\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker run -dit --name mycont4 --network=mynetwork ^C\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker run -dit --name mycont4 --network=mynetwork jenkins/jenkins\cf1\highlight2 
+\par \cf0\highlight0 955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker ps\cf1\highlight2 
+\par \cf0\highlight0 CONTAINER ID   IMAGE             COMMAND                  CREATED             STATUS             PORTS                 NAMES\cf1\highlight2 
+\par \cf0\highlight0\f1 955dd7bd7e72   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   13 seconds ago      Up 11 seconds      8080/tcp, 50000/tcp   mycont4\cf1\highlight2\f0 
+\par \cf0\highlight0\f1 4c4e4b235531   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   About an hour ago   Up About an hour   8080/tcp, 50000/tcp   mycont2\cf1\highlight2\f0 
+\par \cf0\highlight0\f1 e7b2a7374c13   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   2 hours ago         Up About an hour   8080/tcp, 50000/tcp   mycont1\cf1\highlight2\f0 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker inspect mycont4\cf1\highlight2 
+\par \cf0\highlight0 [\cf1\highlight2 
+\par \cf0\highlight0     \{\cf1\highlight2 
+\par \cf0\highlight0         "Id": "955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c",\cf1\highlight2 
+\par \cf0\highlight0         "Created": "2022-07-21T07:35:52.670370888Z",\cf1\highlight2 
+\par \cf0\highlight0         "Path": "/usr/bin/tini",\cf1\highlight2 
+\par \cf0\highlight0         "Args": [\cf1\highlight2 
+\par \cf0\highlight0             "--",\cf1\highlight2 
+\par \cf0\highlight0             "/usr/local/bin/jenkins.sh"\cf1\highlight2 
+\par \cf0\highlight0         ],\cf1\highlight2 
+\par \cf0\highlight0         "State": \{\cf1\highlight2 
+\par \cf0\highlight0             "Status": "running",\cf1\highlight2 
+\par \cf0\highlight0             "Running": true,\cf1\highlight2 
+\par \cf0\highlight0             "Paused": false,\cf1\highlight2 
+\par \cf0\highlight0             "Restarting": false,\cf1\highlight2 
+\par \cf0\highlight0             "OOMKilled": false,\cf1\highlight2 
+\par \cf0\highlight0             "Dead": false,\cf1\highlight2 
+\par \cf0\highlight0             "Pid": 5632,\cf1\highlight2 
+\par \cf0\highlight0             "ExitCode": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Error": "",\cf1\highlight2 
+\par \cf0\highlight0             "StartedAt": "2022-07-21T07:35:53.226013725Z",\cf1\highlight2 
+\par \cf0\highlight0             "FinishedAt": "0001-01-01T00:00:00Z"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Image": "sha256:9689a0f7e06fc63b026ab4e9ed1e602476856d03b7a8f0da9514449c7069ade2",\cf1\highlight2 
+\par \cf0\highlight0         "ResolvConfPath": "/var/lib/docker/containers/955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c/resolv.conf",\cf1\highlight2 
+\par \cf0\highlight0         "HostnamePath": "/var/lib/docker/containers/955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c/hostname",\cf1\highlight2 
+\par \cf0\highlight0         "HostsPath": "/var/lib/docker/containers/955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c/hosts",\cf1\highlight2 
+\par \cf0\highlight0         "LogPath": "/var/lib/docker/containers/955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c/955dd7bd7e729961a61c47a19481bf9ba063f9278ef71af0aba993526e821e2c-json.log",\cf1\highlight2 
+\par \cf0\highlight0         "Name": "/mycont4",\cf1\highlight2 
+\par \cf0\highlight0         "RestartCount": 0,\cf1\highlight2 
+\par \cf0\highlight0         "Driver": "overlay2",\cf1\highlight2 
+\par \cf0\highlight0         "Platform": "linux",\cf1\highlight2 
+\par \cf0\highlight0         "MountLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "ProcessLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "AppArmorProfile": "",\cf1\highlight2 
+\par \cf0\highlight0         "ExecIDs": null,\cf1\highlight2 
+\par \cf0\highlight0         "HostConfig": \{\cf1\highlight2 
+\par \cf0\highlight0             "Binds": null,\cf1\highlight2 
+\par \cf0\highlight0             "ContainerIDFile": "",\cf1\highlight2 
+\par \cf0\highlight0             "LogConfig": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Type": "json-file",\cf1\highlight2 
+\par \cf0\highlight0                 "Config": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "NetworkMode": "mynetwork",\cf1\highlight2 
+\par \cf0\highlight0             "PortBindings": \{\},\cf1\highlight2 
+\par \cf0\highlight0             "RestartPolicy": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "no",\cf1\highlight2 
+\par \cf0\highlight0                 "MaximumRetryCount": 0\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "AutoRemove": false,\cf1\highlight2 
+\par \cf0\highlight0             "VolumeDriver": "",\cf1\highlight2 
+\par \cf0\highlight0             "VolumesFrom": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapDrop": null,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupnsMode": "host",\cf1\highlight2 
+\par \cf0\highlight0             "Dns": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsOptions": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsSearch": [],\cf1\highlight2 
+\par \cf0\highlight0             "ExtraHosts": null,\cf1\highlight2 
+\par \cf0\highlight0             "GroupAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "IpcMode": "private",\cf1\highlight2 
+\par \cf0\highlight0             "Cgroup": "",\cf1\highlight2 
+\par \cf0\highlight0             "Links": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomScoreAdj": 0,\cf1\highlight2 
+\par \cf0\highlight0             "PidMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "Privileged": false,\cf1\highlight2 
+\par \cf0\highlight0             "PublishAllPorts": false,\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyRootfs": false,\cf1\highlight2 
+\par \cf0\highlight0             "SecurityOpt": null,\cf1\highlight2 
+\par \cf0\highlight0             "UTSMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "UsernsMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "ShmSize": 67108864,\cf1\highlight2 
+\par \cf0\highlight0             "Runtime": "runc",\cf1\highlight2 
+\par \cf0\highlight0             "ConsoleSize": [\cf1\highlight2 
+\par \cf0\highlight0                 0,\cf1\highlight2 
+\par \cf0\highlight0                 0\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Isolation": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpuShares": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Memory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "NanoCpus": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupParent": "",\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeight": 0,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeightDevice": [],\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuQuota": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimePeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimeRuntime": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpusetCpus": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpusetMems": "",\cf1\highlight2 
+\par \cf0\highlight0             "Devices": [],\cf1\highlight2 
+\par \cf0\highlight0             "DeviceCgroupRules": null,\cf1\highlight2 
+\par \cf0\highlight0             "DeviceRequests": null,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemoryTCP": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemoryReservation": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwap": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwappiness": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomKillDisable": false,\cf1\highlight2 
+\par \cf0\highlight0             "PidsLimit": null,\cf1\highlight2 
+\par \cf0\highlight0             "Ulimits": [\cf1\highlight2 
+\par \cf0\highlight0                 \{\cf1\highlight2 
+\par \cf0\highlight0                     "Name": "nofile",\cf1\highlight2 
+\par \cf0\highlight0                     "Hard": 65536,\cf1\highlight2 
+\par \cf0\highlight0                     "Soft": 32768\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "CpuCount": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPercent": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumIOps": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumBandwidth": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MaskedPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/asound",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/acpi",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/kcore",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/keys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/latency_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_list",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sched_debug",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/scsi",\cf1\highlight2 
+\par \cf0\highlight0                 "/sys/firmware"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/bus",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/fs",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/irq",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sysrq-trigger"\cf1\highlight2 
+\par \cf0\highlight0             ]\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "GraphDriver": \{\cf1\highlight2 
+\par \cf0\highlight0             "Data": \{\cf1\highlight2 
+\par \cf0\highlight0                 "LowerDir": "/var/lib/docker/overlay2/6fdd84c5f636a726484ef0a632d5470dfe07127ae216ac7ff863782bedb513cb-init/diff:/var/lib/docker/overlay2/8730467e2729538706a03502cbf492b52fc9ed5bfadc05cd6d1f74a546d1fdcb/diff:/var/lib/docker/overlay2/5caa0487b5b1827c90591ac17061f64246377f1515d5e629fbe7e62a4e874d5c/diff:/var/lib/docker/overlay2/bc3d06c27f75d9109e8cd1ae7bb28f452c43376c9948e3c559b5887155c018ec/diff:/var/lib/docker/overlay2/ad3fc07ad6dd7eced123e76a5e1e0dd88e5d0ab90cb9bb4ea4721f983f7a6ae2/diff:/var/lib/docker/overlay2/c8957fe079984179e679fdbd3208c06338b4282e5cbbfe8377134618ff58200e/diff:/var/lib/docker/overlay2/c47de7a81ac2d4a308eb2629b8fe4ccf76ac285bcb1b6754769beeef1dba7e73/diff:/var/lib/docker/overlay2/844d519114b1ce757a1e95375a1c0738df27d8dc9fbc940e1d36abf92fdd76fb/diff:/var/lib/docker/overlay2/1fc804a60fc0698d9d2cd3895762504bdf319e9a434dd9207b49821b095abe09/diff:/var/lib/docker/overlay2/a59f7f1efb5015cb511932a502d9bb8816414ca28a1c79c68ea754621c8a7f22/diff:/var/lib/docker/overlay2/bde1773e9ff2142c68d744c4d0c81ebc5cdb99802302070afcb5b329009262d4/diff:/var/lib/docker/overlay2/07055b492853ada6b9faf6cdc599367670e78bc82a7798cf9b3e7dc141411f7b/diff:/var/lib/docker/overlay2/4f5775674ad832ed151ca9e6c12f4fffa1ecdd52a162aabeb572b5171646f7dd/diff:/var/lib/docker/overlay2/1a9e6177d204eaf0a092728a94d25de5df3d477d0346429e95c89a1d4034da3d/diff:/var/lib/docker/overlay2/f7268f69989d614ea10a727fc134a3773172850a55c52af6ed0acf85809692ed/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "MergedDir": "/var/lib/docker/overlay2/6fdd84c5f636a726484ef0a632d5470dfe07127ae216ac7ff863782bedb513cb/merged",\cf1\highlight2 
+\par \cf0\highlight0                 "UpperDir": "/var/lib/docker/overlay2/6fdd84c5f636a726484ef0a632d5470dfe07127ae216ac7ff863782bedb513cb/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "WorkDir": "/var/lib/docker/overlay2/6fdd84c5f636a726484ef0a632d5470dfe07127ae216ac7ff863782bedb513cb/work"\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Name": "overlay2"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Mounts": [\cf1\highlight2 
+\par \cf0\highlight0             \{\cf1\highlight2 
+\par \cf0\highlight0                 "Type": "volume",\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "2b4eafdd52620ba77820dc4342f67a9397fcc4d1b6115ead77fd0a920cfb3342",\cf1\highlight2 
+\par \cf0\highlight0                 "Source": "/var/lib/docker/volumes/2b4eafdd52620ba77820dc4342f67a9397fcc4d1b6115ead77fd0a920cfb3342/_data",\cf1\highlight2 
+\par \cf0\highlight0                 "Destination": "/var/jenkins_home",\cf1\highlight2 
+\par \cf0\highlight0                 "Driver": "local",\cf1\highlight2 
+\par \cf0\highlight0                 "Mode": "",\cf1\highlight2 
+\par \cf0\highlight0                 "RW": true,\cf1\highlight2 
+\par \cf0\highlight0                 "Propagation": ""\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         ],\cf1\highlight2 
+\par \cf0\highlight0         "Config": \{\cf1\highlight2 
+\par \cf0\highlight0             "Hostname": "955dd7bd7e72",\cf1\highlight2 
+\par \cf0\highlight0             "Domainname": "",\cf1\highlight2 
+\par \cf0\highlight0             "User": "jenkins",\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdin": false,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdout": false,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStderr": false,\cf1\highlight2 
+\par \cf0\highlight0             "ExposedPorts": \{\cf1\highlight2 
+\par \cf0\highlight0                 "50000/tcp": \{\},\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Tty": true,\cf1\highlight2 
+\par \cf0\highlight0             "OpenStdin": true,\cf1\highlight2 
+\par \cf0\highlight0             "StdinOnce": false,\cf1\highlight2 
+\par \cf0\highlight0             "Env": [\cf1\highlight2 
+\par \cf0\highlight0                 "PATH=/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",\cf1\highlight2 
+\par \cf0\highlight0                 "LANG=C.UTF-8",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_HOME=/var/jenkins_home",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_SLAVE_AGENT_PORT=50000",\cf1\highlight2 
+\par \cf0\highlight0                 "REF=/usr/share/jenkins/ref",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_VERSION=2.360",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_UC=https://updates.jenkins.io",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_UC_EXPERIMENTAL=https://updates.jenkins.io/experimental",\cf1\highlight2 
+\par \cf0\highlight0                 "JENKINS_INCREMENTALS_REPO_MIRROR=https://repo.jenkins-ci.org/incrementals",\cf1\highlight2 
+\par \cf0\highlight0                 "COPY_REFERENCE_FILE_LOG=/var/jenkins_home/copy_reference_file.log",\cf1\highlight2 
+\par \cf0\highlight0                 "JAVA_HOME=/opt/java/openjdk"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Cmd": null,\cf1\highlight2 
+\par \cf0\highlight0             "Image": "jenkins/jenkins",\cf1\highlight2 
+\par \cf0\highlight0             "Volumes": \{\cf1\highlight2 
+\par \cf0\highlight0                 "/var/jenkins_home": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "WorkingDir": "",\cf1\highlight2 
+\par \cf0\highlight0             "Entrypoint": [\cf1\highlight2 
+\par \cf0\highlight0                 "/usr/bin/tini",\cf1\highlight2 
+\par \cf0\highlight0                 "--",\cf1\highlight2 
+\par \cf0\highlight0                 "/usr/local/bin/jenkins.sh"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "OnBuild": null,\cf1\highlight2 
+\par \cf0\highlight0             "Labels": \{\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.description": "The Jenkins Continuous Integration and Delivery server",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.licenses": "MIT",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.revision": "f73612cb9fa21a24f9c5bf3a1afc2ef1804690ee",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.source": "https://github.com/jenkinsci/docker",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.title": "Official Jenkins Docker image",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.url": "https://www.jenkins.io/",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.vendor": "Jenkins project",\cf1\highlight2 
+\par \cf0\highlight0                 "org.opencontainers.image.version": "2.360"\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "NetworkSettings": \{\cf1\highlight2 
+\par \cf0\highlight0             "Bridge": "",\cf1\highlight2 
+\par \cf0\highlight0             "SandboxID": "cb2e9aa0aab63f5e3bd3cc09b0406310c5629de3f592b6a692af60dc27dfa6ae",\cf1\highlight2 
+\par \cf0\highlight0             "HairpinMode": false,\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Ports": \{\cf1\highlight2 
+\par \cf0\highlight0                 "50000/tcp": null,\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": null\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "SandboxKey": "/var/run/docker/netns/cb2e9aa0aab6",\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPAddresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPv6Addresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "EndpointID": "",\cf1\highlight2 
+\par \cf0\highlight0             "Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IPAddress": "",\cf1\highlight2 
+\par \cf0\highlight0             "IPPrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0             "MacAddress": "",\cf1\highlight2 
+\par \cf0\highlight0             "Networks": \{\cf1\highlight2 
+\par \cf0\highlight0                 "mynetwork": \{\cf1\highlight2 
+\par \cf0\highlight0                     "IPAMConfig": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Links": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Aliases": [\cf1\highlight2 
+\par \cf0\highlight0                         "955dd7bd7e72"\cf1\highlight2 
+\par \cf0\highlight0                     ],\cf1\highlight2 
+\par \cf0\highlight0                     "NetworkID": "661f8879e95a8c7c61f0da8e25ea86d00d2d8c6c20048a23cad7eee834cb61d1",\cf1\highlight2 
+\par \cf0\highlight0                     "EndpointID": "2d9f6a73b6e11b0fbab8e89a30b47990aaa443320c656efcdb26da8675299a28",\cf1\highlight2 
+\par \cf0\highlight0                     "Gateway": "172.18.0.1",\cf1\highlight2 
+\par \cf0\highlight0                     "IPAddress": "172.18.0.3",\cf1\highlight2 
+\par \cf0\highlight0                     "IPPrefixLen": 16,\cf1\highlight2 
+\par \cf0\highlight0                     "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0                     "MacAddress": "02:42:ac:12:00:03",\cf1\highlight2 
+\par \cf0\highlight0                     "DriverOpts": null\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \}\cf1\highlight2 
+\par \cf0\highlight0     \}\cf1\highlight2 
+\par \cf0\highlight0 ]\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker images\cf1\highlight2 
+\par \cf0\highlight0 REPOSITORY        TAG       IMAGE ID       CREATED        SIZE\cf1\highlight2 
+\par \cf0\highlight0 jenkins/jenkins   latest    9689a0f7e06f   42 hours ago   462MB\cf1\highlight2 
+\par \cf0\highlight0 myown-image       v1        9689a0f7e06f   42 hours ago   462MB\cf1\highlight2 
+\par \cf0\highlight0 tomee             latest    a3e6e1133a38   8 days ago     361MB\cf1\highlight2 
+\par \cf0\highlight0 tomcat            latest    451d25ef4583   3 weeks ago    483MB\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker run -dit --name mycont3 --network=mynetwork ^C\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker run -dit --name mycont3 --network=mynetwork tomcat\cf1\highlight2 
+\par \cf0\highlight0 ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker inspect mycont3\cf1\highlight2 
+\par \cf0\highlight0 [\cf1\highlight2 
+\par \cf0\highlight0     \{\cf1\highlight2 
+\par \cf0\highlight0         "Id": "ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f",\cf1\highlight2 
+\par \cf0\highlight0         "Created": "2022-07-21T07:40:45.051849805Z",\cf1\highlight2 
+\par \cf0\highlight0         "Path": "catalina.sh",\cf1\highlight2 
+\par \cf0\highlight0         "Args": [\cf1\highlight2 
+\par \cf0\highlight0             "run"\cf1\highlight2 
+\par \cf0\highlight0         ],\cf1\highlight2 
+\par \cf0\highlight0         "State": \{\cf1\highlight2 
+\par \cf0\highlight0             "Status": "running",\cf1\highlight2 
+\par \cf0\highlight0             "Running": true,\cf1\highlight2 
+\par \cf0\highlight0             "Paused": false,\cf1\highlight2 
+\par \cf0\highlight0             "Restarting": false,\cf1\highlight2 
+\par \cf0\highlight0             "OOMKilled": false,\cf1\highlight2 
+\par \cf0\highlight0             "Dead": false,\cf1\highlight2 
+\par \cf0\highlight0             "Pid": 5868,\cf1\highlight2 
+\par \cf0\highlight0             "ExitCode": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Error": "",\cf1\highlight2 
+\par \cf0\highlight0             "StartedAt": "2022-07-21T07:40:45.695946573Z",\cf1\highlight2 
+\par \cf0\highlight0             "FinishedAt": "0001-01-01T00:00:00Z"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Image": "sha256:451d25ef4583d58da6cb84bbbfd36aa6e752a8efa3d9a137da9b77334e7b902b",\cf1\highlight2 
+\par \cf0\highlight0         "ResolvConfPath": "/var/lib/docker/containers/ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f/resolv.conf",\cf1\highlight2 
+\par \cf0\highlight0         "HostnamePath": "/var/lib/docker/containers/ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f/hostname",\cf1\highlight2 
+\par \cf0\highlight0         "HostsPath": "/var/lib/docker/containers/ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f/hosts",\cf1\highlight2 
+\par \cf0\highlight0         "LogPath": "/var/lib/docker/containers/ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f/ba4ee3c29c4938e4c5f20d98e09c936bb6bd386861261e508ca02e6a0c0e3f3f-json.log",\cf1\highlight2 
+\par \cf0\highlight0         "Name": "/mycont3",\cf1\highlight2 
+\par \cf0\highlight0         "RestartCount": 0,\cf1\highlight2 
+\par \cf0\highlight0         "Driver": "overlay2",\cf1\highlight2 
+\par \cf0\highlight0         "Platform": "linux",\cf1\highlight2 
+\par \cf0\highlight0         "MountLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "ProcessLabel": "",\cf1\highlight2 
+\par \cf0\highlight0         "AppArmorProfile": "",\cf1\highlight2 
+\par \cf0\highlight0         "ExecIDs": null,\cf1\highlight2 
+\par \cf0\highlight0         "HostConfig": \{\cf1\highlight2 
+\par \cf0\highlight0             "Binds": null,\cf1\highlight2 
+\par \cf0\highlight0             "ContainerIDFile": "",\cf1\highlight2 
+\par \cf0\highlight0             "LogConfig": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Type": "json-file",\cf1\highlight2 
+\par \cf0\highlight0                 "Config": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "NetworkMode": "mynetwork",\cf1\highlight2 
+\par \cf0\highlight0             "PortBindings": \{\},\cf1\highlight2 
+\par \cf0\highlight0             "RestartPolicy": \{\cf1\highlight2 
+\par \cf0\highlight0                 "Name": "no",\cf1\highlight2 
+\par \cf0\highlight0                 "MaximumRetryCount": 0\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "AutoRemove": false,\cf1\highlight2 
+\par \cf0\highlight0             "VolumeDriver": "",\cf1\highlight2 
+\par \cf0\highlight0             "VolumesFrom": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "CapDrop": null,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupnsMode": "host",\cf1\highlight2 
+\par \cf0\highlight0             "Dns": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsOptions": [],\cf1\highlight2 
+\par \cf0\highlight0             "DnsSearch": [],\cf1\highlight2 
+\par \cf0\highlight0             "ExtraHosts": null,\cf1\highlight2 
+\par \cf0\highlight0             "GroupAdd": null,\cf1\highlight2 
+\par \cf0\highlight0             "IpcMode": "private",\cf1\highlight2 
+\par \cf0\highlight0             "Cgroup": "",\cf1\highlight2 
+\par \cf0\highlight0             "Links": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomScoreAdj": 0,\cf1\highlight2 
+\par \cf0\highlight0             "PidMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "Privileged": false,\cf1\highlight2 
+\par \cf0\highlight0             "PublishAllPorts": false,\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyRootfs": false,\cf1\highlight2 
+\par \cf0\highlight0             "SecurityOpt": null,\cf1\highlight2 
+\par \cf0\highlight0             "UTSMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "UsernsMode": "",\cf1\highlight2 
+\par \cf0\highlight0             "ShmSize": 67108864,\cf1\highlight2 
+\par \cf0\highlight0             "Runtime": "runc",\cf1\highlight2 
+\par \cf0\highlight0             "ConsoleSize": [\cf1\highlight2 
+\par \cf0\highlight0                 0,\cf1\highlight2 
+\par \cf0\highlight0                 0\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Isolation": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpuShares": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Memory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "NanoCpus": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CgroupParent": "",\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeight": 0,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioWeightDevice": [],\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteBps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceReadIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "BlkioDeviceWriteIOps": null,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuQuota": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimePeriod": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuRealtimeRuntime": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpusetCpus": "",\cf1\highlight2 
+\par \cf0\highlight0             "CpusetMems": "",\cf1\highlight2 
+\par \cf0\highlight0             "Devices": [],\cf1\highlight2 
+\par \cf0\highlight0             "DeviceCgroupRules": null,\cf1\highlight2 
+\par \cf0\highlight0             "DeviceRequests": null,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemory": 0,\cf1\highlight2 
+\par \cf0\highlight0             "KernelMemoryTCP": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemoryReservation": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwap": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MemorySwappiness": null,\cf1\highlight2 
+\par \cf0\highlight0             "OomKillDisable": false,\cf1\highlight2 
+\par \cf0\highlight0             "PidsLimit": null,\cf1\highlight2 
+\par \cf0\highlight0             "Ulimits": [\cf1\highlight2 
+\par \cf0\highlight0                 \{\cf1\highlight2 
+\par \cf0\highlight0                     "Name": "nofile",\cf1\highlight2 
+\par \cf0\highlight0                     "Hard": 65536,\cf1\highlight2 
+\par \cf0\highlight0                     "Soft": 32768\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "CpuCount": 0,\cf1\highlight2 
+\par \cf0\highlight0             "CpuPercent": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumIOps": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IOMaximumBandwidth": 0,\cf1\highlight2 
+\par \cf0\highlight0             "MaskedPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/asound",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/acpi",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/kcore",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/keys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/latency_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_list",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/timer_stats",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sched_debug",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/scsi",\cf1\highlight2 
+\par \cf0\highlight0                 "/sys/firmware"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "ReadonlyPaths": [\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/bus",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/fs",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/irq",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sys",\cf1\highlight2 
+\par \cf0\highlight0                 "/proc/sysrq-trigger"\cf1\highlight2 
+\par \cf0\highlight0             ]\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "GraphDriver": \{\cf1\highlight2 
+\par \cf0\highlight0             "Data": \{\cf1\highlight2 
+\par \cf0\highlight0                 "LowerDir": "/var/lib/docker/overlay2/a2cb46242cdd2450797e37238dd8d521b2a598b59cc0308ab8b6534826079c59-init/diff:/var/lib/docker/overlay2/df9409a927a6a48adfdf2f15160918ee9952cd9b523b02e8aff5e1c25e492375/diff:/var/lib/docker/overlay2/8611c610c8bd63eae33f78581925fd0aa86ce4e2455956581f8eca1ff8a7597e/diff:/var/lib/docker/overlay2/b848c3b7b67a46225e93668d3c424f67a067e87c7472be7b66bedd8606ebdb16/diff:/var/lib/docker/overlay2/8ee39e1e56450fd9e055739beffb934caa1b664f59d7ebdd4aef84e4bd4d9a9c/diff:/var/lib/docker/overlay2/7ae115cbd6ad164615cc64298a64f1fe4a7230d9e87da8223c65428ad21c92ae/diff:/var/lib/docker/overlay2/f1187ac40fcd723a6e61aa35b6f6db2c4c2c42d79e4d06dc7516320cee76f1d7/diff:/var/lib/docker/overlay2/079e1e37607a387cb16d5bfe8dec8c0ee599986df713ba0585e356e77fb2f4cd/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "MergedDir": "/var/lib/docker/overlay2/a2cb46242cdd2450797e37238dd8d521b2a598b59cc0308ab8b6534826079c59/merged",\cf1\highlight2 
+\par \cf0\highlight0                 "UpperDir": "/var/lib/docker/overlay2/a2cb46242cdd2450797e37238dd8d521b2a598b59cc0308ab8b6534826079c59/diff",\cf1\highlight2 
+\par \cf0\highlight0                 "WorkDir": "/var/lib/docker/overlay2/a2cb46242cdd2450797e37238dd8d521b2a598b59cc0308ab8b6534826079c59/work"\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Name": "overlay2"\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "Mounts": [],\cf1\highlight2 
+\par \cf0\highlight0         "Config": \{\cf1\highlight2 
+\par \cf0\highlight0             "Hostname": "ba4ee3c29c49",\cf1\highlight2 
+\par \cf0\highlight0             "Domainname": "",\cf1\highlight2 
+\par \cf0\highlight0             "User": "",\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdin": false,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStdout": false,\cf1\highlight2 
+\par \cf0\highlight0             "AttachStderr": false,\cf1\highlight2 
+\par \cf0\highlight0             "ExposedPorts": \{\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": \{\}\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "Tty": true,\cf1\highlight2 
+\par \cf0\highlight0             "OpenStdin": true,\cf1\highlight2 
+\par \cf0\highlight0             "StdinOnce": false,\cf1\highlight2 
+\par \cf0\highlight0             "Env": [\cf1\highlight2 
+\par \cf0\highlight0                 "PATH=/usr/local/tomcat/bin:/opt/java/openjdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",\cf1\highlight2 
+\par \cf0\highlight0                 "LANG=en_US.UTF-8",\cf1\highlight2 
+\par \cf0\highlight0                 "LANGUAGE=en_US:en",\cf1\highlight2 
+\par \cf0\highlight0                 "LC_ALL=en_US.UTF-8",\cf1\highlight2 
+\par \cf0\highlight0                 "JAVA_VERSION=jdk-17.0.3+7",\cf1\highlight2 
+\par \cf0\highlight0                 "JAVA_HOME=/opt/java/openjdk",\cf1\highlight2 
+\par \cf0\highlight0                 "CATALINA_HOME=/usr/local/tomcat",\cf1\highlight2 
+\par \cf0\highlight0                 "TOMCAT_NATIVE_LIBDIR=/usr/local/tomcat/native-jni-lib",\cf1\highlight2 
+\par \cf0\highlight0                 "LD_LIBRARY_PATH=/usr/local/tomcat/native-jni-lib",\cf1\highlight2 
+\par \cf0\highlight0                 "GPG_KEYS=A9C5DF4D22E99998D9875A5110C01C5A2F6059E7",\cf1\highlight2 
+\par \cf0\highlight0                 "TOMCAT_MAJOR=10",\cf1\highlight2 
+\par \cf0\highlight0                 "TOMCAT_VERSION=10.0.22",\cf1\highlight2 
+\par \cf0\highlight0                 "TOMCAT_SHA512=fe46db8794f066882b30e7a94bd8d3dbcf29e8e8ffaf67c1355846755745a7c9eafd124819283f218bcf410921a485b44b57b56fd6251fb99d67d95f3dd36826"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Cmd": [\cf1\highlight2 
+\par \cf0\highlight0                 "catalina.sh",\cf1\highlight2 
+\par \cf0\highlight0                 "run"\cf1\highlight2 
+\par \cf0\highlight0             ],\cf1\highlight2 
+\par \cf0\highlight0             "Image": "tomcat",\cf1\highlight2 
+\par \cf0\highlight0             "Volumes": null,\cf1\highlight2 
+\par \cf0\highlight0             "WorkingDir": "/usr/local/tomcat",\cf1\highlight2 
+\par \cf0\highlight0             "Entrypoint": null,\cf1\highlight2 
+\par \cf0\highlight0             "OnBuild": null,\cf1\highlight2 
+\par \cf0\highlight0             "Labels": \{\}\cf1\highlight2 
+\par \cf0\highlight0         \},\cf1\highlight2 
+\par \cf0\highlight0         "NetworkSettings": \{\cf1\highlight2 
+\par \cf0\highlight0             "Bridge": "",\cf1\highlight2 
+\par \cf0\highlight0             "SandboxID": "37275778615a3e7410e5d0dbfbdcdb3dca72ad575d877ed67fffd317105e13c6",\cf1\highlight2 
+\par \cf0\highlight0             "HairpinMode": false,\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "LinkLocalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "Ports": \{\cf1\highlight2 
+\par \cf0\highlight0                 "8080/tcp": null\cf1\highlight2 
+\par \cf0\highlight0             \},\cf1\highlight2 
+\par \cf0\highlight0             "SandboxKey": "/var/run/docker/netns/37275778615a",\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPAddresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "SecondaryIPv6Addresses": null,\cf1\highlight2 
+\par \cf0\highlight0             "EndpointID": "",\cf1\highlight2 
+\par \cf0\highlight0             "Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0             "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IPAddress": "",\cf1\highlight2 
+\par \cf0\highlight0             "IPPrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0             "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0             "MacAddress": "",\cf1\highlight2 
+\par \cf0\highlight0             "Networks": \{\cf1\highlight2 
+\par \cf0\highlight0                 "mynetwork": \{\cf1\highlight2 
+\par \cf0\highlight0                     "IPAMConfig": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Links": null,\cf1\highlight2 
+\par \cf0\highlight0                     "Aliases": [\cf1\highlight2 
+\par \cf0\highlight0                         "ba4ee3c29c49"\cf1\highlight2 
+\par \cf0\highlight0                     ],\cf1\highlight2 
+\par \cf0\highlight0                     "NetworkID": "661f8879e95a8c7c61f0da8e25ea86d00d2d8c6c20048a23cad7eee834cb61d1",\cf1\highlight2 
+\par \cf0\highlight0                     "EndpointID": "c01a92a26ed4cb5c855b6dd824e0b3d19fbb1d27082a9c92367910cab9380fda",\cf1\highlight2 
+\par \cf0\highlight0                     "Gateway": "172.18.0.1",\cf1\highlight2 
+\par \cf0\highlight0                     "IPAddress": "172.18.0.4",\cf1\highlight2 
+\par \cf0\highlight0                     "IPPrefixLen": 16,\cf1\highlight2 
+\par \cf0\highlight0                     "IPv6Gateway": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6Address": "",\cf1\highlight2 
+\par \cf0\highlight0                     "GlobalIPv6PrefixLen": 0,\cf1\highlight2 
+\par \cf0\highlight0                     "MacAddress": "02:42:ac:12:00:04",\cf1\highlight2 
+\par \cf0\highlight0                     "DriverOpts": null\cf1\highlight2 
+\par \cf0\highlight0                 \}\cf1\highlight2 
+\par \cf0\highlight0             \}\cf1\highlight2 
+\par \cf0\highlight0         \}\cf1\highlight2 
+\par \cf0\highlight0     \}\cf1\highlight2 
+\par \cf0\highlight0 ]\cf1\highlight2 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]# docker ps\cf1\highlight2 
+\par \cf0\highlight0 CONTAINER ID   IMAGE             COMMAND                  CREATED          STATUS             PORTS                 NAMES\cf1\highlight2 
+\par \cf0\highlight0 ba4ee3c29c49   tomcat            "catalina.sh run"        36 seconds ago   Up 35 seconds      8080/tcp              mycont3\cf1\highlight2 
+\par \cf0\highlight0\f1 955dd7bd7e72   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   5 minutes ago    Up 5 minutes       8080/tcp, 50000/tcp   mycont4\cf1\highlight2\f0 
+\par \cf0\highlight0\f1 4c4e4b235531   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   2 hours ago      Up 2 hours         8080/tcp, 50000/tcp   mycont2\cf1\highlight2\f0 
+\par \cf0\highlight0\f1 e7b2a7374c13   jenkins/jenkins   "/usr/bin/tini -- /u\'85"   2 hours ago      Up About an hour   8080/tcp, 50000/tcp   mycont1\cf1\highlight2\f0 
+\par \cf0\highlight0 [root@ip-172-31-24-0 ec2-user]#\cf1\highlight2 
+\par \pard\cf0\highlight0\f2 
+\par }
+ 

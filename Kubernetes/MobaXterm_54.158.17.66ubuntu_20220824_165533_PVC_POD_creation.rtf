@@ -1,0 +1,180 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fmodern Consolas;}{\f1\fmodern\fcharset0 Consolas;}{\f2\fnil\fcharset129 Courier New;}}
+{\colortbl ;\red20\green20\blue20;\red142\green142\blue142;\red170\green85\blue85;\red18\green124\blue155;\red94\green147\blue162;\red134\green216\blue181;\red170\green64\blue64;\red85\green85\blue85;\red170\green51\blue170;}
+\viewkind4\uc1\pard\f0\fs20 ubuntu@ip-172-31-21-111:~$ minikube status\cf1\highlight2 
+\par \cf0\highlight0 * Profile "minikube" not found. Run "minikube profile list" to view all profiles.\cf1\highlight2 
+\par \cf0\highlight0   To start a cluster, run: "minikube start"\cf1\highlight2 
+\par \cf0\highlight0 ubuntu@ip-172-31-21-111:~$ minikube start\cf1\highlight2 
+\par \cf0\highlight0 * minikube v1.26.1 on Ubuntu 22.04 (xen/amd64)\cf1\highlight2 
+\par \cf0\highlight0 * Unable to pick a default driver. Here is what was considered, in preference order:\cf1\highlight2 
+\par \cf0\highlight0   - docker: Not healthy: "docker version --format \{\{.Server.Os\}\}-\{\{.Server.Version\}\}" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied\cf1\highlight2 
+\par \cf0\highlight0   - docker: Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker' <https://docs.docker.com/engine/install/linux-postinstall/>\cf1\highlight2 
+\par \cf0\highlight0 * Alternatively you could install one of these drivers:\cf1\highlight2 
+\par \cf0\highlight0   - kvm2: Not installed: exec: "virsh": executable file not found in $PATH\cf1\highlight2 
+\par \cf0\highlight0   - podman: Not installed: exec: "podman": executable file not found in $PATH\cf1\highlight2 
+\par \cf0\highlight0   - vmware: Not installed: exec: "docker-machine-driver-vmware": executable file not found in $PATH\cf1\highlight2 
+\par \cf0\highlight0   - virtualbox: Not installed: unable to find VBoxManage in $PATH\cf1\highlight2 
+\par \cf0\highlight0   - qemu2: Not installed: exec: "qemu-system-x86_64": executable file not found in $PATH\cf1\highlight2 
+\par 
+\par \cf0\highlight0 X Exiting due to DRV_NOT_HEALTHY: Found driver(s) but none were healthy. See above for suggestions how to fix installed drivers.\cf1\highlight2 
+\par 
+\par \cf0\highlight0 ubuntu@ip-172-31-21-111:~$ minikube status\cf1\highlight2 
+\par \cf0\highlight0 * Profile "minikube" not found. Run "minikube profile list" to view all profiles.\cf1\highlight2 
+\par \cf0\highlight0   To start a cluster, run: "minikube start"\cf1\highlight2 
+\par \cf0\highlight0 ubuntu@ip-172-31-21-111:~$ docker --version\cf1\highlight2 
+\par \cf0\highlight0 Docker version 20.10.12, build 20.10.12-0ubuntu4\cf1\highlight2 
+\par \cf0\highlight0 ubuntu@ip-172-31-21-111:~$ minikube start --driver=docker\cf1\highlight2 
+\par \cf0\highlight0 * minikube v1.26.1 on Ubuntu 22.04 (xen/amd64)\cf1\highlight2 
+\par \cf0\highlight0 * Using the docker driver based on user configuration\cf1\highlight2 
+\par 
+\par \cf0\highlight0 X Exiting due to PROVIDER_DOCKER_NEWGRP: "docker version --format -" exit status 1: Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.24/version": dial unix /var/run/docker.sock: connect: permission denied\cf1\highlight2 
+\par \cf0\highlight0 * Suggestion: Add your user to the 'docker' group: 'sudo usermod -aG docker $USER && newgrp docker'\cf1\highlight2 
+\par \cf0\highlight0 * Documentation: https://docs.docker.com/engine/install/linux-postinstall/\cf1\highlight2 
+\par 
+\par \cf0\highlight0 ubuntu@ip-172-31-21-111:~$ sudo su -\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# minikube start\cf1\highlight2 
+\par \cf0\highlight0 * minikube v1.26.1 on Ubuntu 22.04 (xen/amd64)\cf1\highlight2 
+\par \cf0\highlight0 * Using the docker driver based on existing profile\cf1\highlight2 
+\par \cf0\highlight0 * The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.\cf1\highlight2 
+\par \cf0\highlight0 * If you are running minikube within a VM, consider using --driver=none:\cf1\highlight2 
+\par \cf0\highlight0 *   https://minikube.sigs.k8s.io/docs/reference/drivers/none/\cf1\highlight2 
+\par \cf0\highlight0 * Tip: To remove this root owned cluster, run: sudo minikube delete\cf1\highlight2 
+\par 
+\par \cf0\highlight0 X Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.\cf1\highlight2 
+\par 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# docker --version\cf1\highlight2 
+\par \cf0\highlight0 Docker version 20.10.12, build 20.10.12-0ubuntu4\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# minikube start --driver=docker\cf1\highlight2 
+\par \cf0\highlight0 * minikube v1.26.1 on Ubuntu 22.04 (xen/amd64)\cf1\highlight2 
+\par \cf0\highlight0 * Using the docker driver based on existing profile\cf1\highlight2 
+\par \cf0\highlight0 * The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.\cf1\highlight2 
+\par \cf0\highlight0 * If you are running minikube within a VM, consider using --driver=none:\cf1\highlight2 
+\par \cf0\highlight0 *   https://minikube.sigs.k8s.io/docs/reference/drivers/none/\cf1\highlight2 
+\par \cf0\highlight0 * Tip: To remove this root owned cluster, run: sudo minikube delete\cf1\highlight2 
+\par 
+\par \cf0\highlight0 X Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.\cf1\highlight2 
+\par 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# minikube start --driver=docker --force\cf1\highlight2 
+\par \cf0\highlight0 * minikube v1.26.1 on Ubuntu 22.04 (xen/amd64)\cf1\highlight2 
+\par \cf0\highlight0 ! minikube skips various validations when --force is supplied; this may lead to unexpected behavior\cf1\highlight2 
+\par \cf0\highlight0 * Using the docker driver based on existing profile\cf1\highlight2 
+\par \cf0\highlight0 * The "docker" driver should not be used with root privileges. If you wish to continue as root, use --force.\cf1\highlight2 
+\par \cf0\highlight0 * If you are running minikube within a VM, consider using --driver=none:\cf1\highlight2 
+\par \cf0\highlight0 *   https://minikube.sigs.k8s.io/docs/reference/drivers/none/\cf1\highlight2 
+\par \cf0\highlight0 * Tip: To remove this root owned cluster, run: sudo minikube delete\cf1\highlight2 
+\par \cf0\highlight0 * Starting control plane node minikube in cluster minikube\cf1\highlight2 
+\par \cf0\highlight0 * Pulling base image ...\cf1\highlight2 
+\par \cf0\highlight0 * Restarting existing docker container for "minikube" ...\cf1\highlight2 
+\par \cf0\highlight0 * Preparing Kubernetes v1.24.3 on Docker 20.10.17 ...\cf1\highlight2 
+\par \cf0\highlight0 * Verifying Kubernetes components...\cf1\highlight2 
+\par \cf0\highlight0   - Using image gcr.io/k8s-minikube/storage-provisioner:v5\cf1\highlight2 
+\par \cf0\highlight0 * Enabled addons: storage-provisioner, default-storageclass\cf1\highlight2 
+\par \cf0\highlight0 * Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# minikube status\cf1\highlight2 
+\par \cf0\highlight0 minikube\cf1\highlight2 
+\par \cf0\highlight0 type: Control Plane\cf1\highlight2 
+\par \cf0\highlight0 host: Running\cf1\highlight2 
+\par \cf0\highlight0 kubelet: Running\cf1\highlight2 
+\par \cf0\highlight0 apiserver: Running\cf1\highlight2 
+\par \cf0\highlight0 kubeconfig: Configured\cf1\highlight2 
+\par 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get pods\cf1\highlight2 
+\par \cf0\highlight0 NAME                        READY   STATUS    RESTARTS      AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-6b767bf6c8-xsgcd   1/1     Running   1 (51s ago)   17m\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy-6b767bf6c8-xsgcd -c shell bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd /]# ls\cf1\highlight2 
+\par \cf0\highlight0 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd /]# cd tmp/persistent/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# cat praveen\cf1\highlight2 
+\par \cf0\highlight0 hii\cf1\highlight2 
+\par \cf0\highlight0 this is praveen\cf1\highlight2 
+\par \cf0\highlight0 bye\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy-6b767bf6c8-xsgcd persistent]# exit\cf1\highlight2 
+\par \cf0\highlight0 exit\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# docker ps\cf1\highlight2 
+\par \cf0\highlight0 CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS              PORTS                                                                                                                                  NAMES\cf1\highlight2 
+\par \cf0\highlight0\f1 4e2e56c53958   gcr.io/k8s-minikube/kicbase:v0.0.33   "/usr/local/bin/entr\'85"   55 minutes ago   Up About a minute   127.0.0.1:49157->22/tcp, 127.0.0.1:49156->2376/tcp, 127.0.0.1:49155->5000/tcp, 127.0.0.1:49154->8443/tcp, 127.0.0.1:49153->32443/tcp   minikube\cf1\highlight2\f0 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# ls\cf1\highlight2 
+\par \cf0\highlight0 kubectl  kubectl.sha256  minikube-linux-amd64  \cf3 minikube_latest_amd64.deb\cf0   pvc-pod.yaml  pvclaim.yaml  pvolume.yaml  \cf4 snap\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# docker exec -it 4e2e56c53958 /bin/bash\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/# ls\cf1\highlight2 
+\par \cf0\highlight0 Release.key  \cf4 boot\cf0   \cf4 dev\cf0          \cf4 etc\cf0    kic.txt  \cf5 lib\cf0     \cf5 lib64\cf0    \cf4 media\cf0   \cf4 opt\cf0    \cf4 root\cf0   \cf5 sbin\cf0   \cf4 sys\cf0   \cf4 usr\cf1\highlight2 
+\par \cf5\highlight0 bin\cf0           \cf4 data\cf0   docker.key  \cf4 home\cf0   \cf4 kind\cf0      \cf5 lib32\cf0   \cf5 libx32\cf0   \cf4 mnt\cf0     \cf4 proc\cf0   \cf4 run\cf0    \cf4 srv\cf0    \cf1\highlight6 tmp\cf0\highlight0   \cf4 var\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/# cd tmp/\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/tmp# ls\cf1\highlight2 
+\par \cf4\highlight0 gvisor\cf0   h.660  h.717  \cf4 hostpath-provisioner\cf0   \cf4 hostpath_pv\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/tmp# cd ..\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/# ls\cf1\highlight2 
+\par \cf0\highlight0 Release.key  \cf4 boot\cf0   \cf4 dev\cf0          \cf4 etc\cf0    kic.txt  \cf5 lib\cf0     \cf5 lib64\cf0    \cf4 media\cf0   \cf4 opt\cf0    \cf4 root\cf0   \cf5 sbin\cf0   \cf4 sys\cf0   \cf4 usr\cf1\highlight2 
+\par \cf5\highlight0 bin\cf0           \cf4 data\cf0   docker.key  \cf4 home\cf0   \cf4 kind\cf0      \cf5 lib32\cf0   \cf5 libx32\cf0   \cf4 mnt\cf0     \cf4 proc\cf0   \cf4 run\cf0    \cf4 srv\cf0    \cf1\highlight6 tmp\cf0\highlight0   \cf4 var\cf1\highlight2 
+\par \cf0\highlight0 root@minikube:/# exit\cf1\highlight2 
+\par \cf0\highlight0 exit\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# ls\cf1\highlight2 
+\par \cf0\highlight0 kubectl  kubectl.sha256  minikube-linux-amd64  \cf3 minikube_latest_amd64.deb\cf0   pvc-pod.yaml  pvclaim.yaml  pvolume.yaml  \cf4 snap\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# vi pvc-pod2.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl create -f pvc\cf1\highlight2 
+\par \cf0\highlight0 pvc-pod.yaml   pvc-pod2.yaml  pvclaim.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl create -f pvc\cf1\highlight2 
+\par \cf0\highlight0 pvc-pod.yaml   pvc-pod2.yaml  pvclaim.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl create -f pvc-pod2.yaml\cf1\highlight2 
+\par \cf0\highlight0 error: resource mapping not found for name: "pvdeploy2" namespace: "" from "pvc-pod2.yaml": no matches for kind "Deployment" in version "v1"\cf1\highlight2 
+\par \cf0\highlight0 ensure CRDs are installed first\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# vi pvc-pod2.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# vi pvc-pod2.yaml\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl create -f pvc-pod2.yaml\cf1\highlight2 
+\par \cf0\highlight0 deployment.apps/pvdeploy2 created\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po\cf1\highlight2 
+\par \cf0\highlight0 NAME                         READY   STATUS    RESTARTS        AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-6b767bf6c8-xsgcd    1/1     Running   1 (8m56s ago)   26m\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-dhv2z   1/1     Running   0               6s\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-gwds8   1/1     Running   0               6s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po\cf1\highlight2 
+\par \cf0\highlight0 NAME                         READY   STATUS    RESTARTS     AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-6b767bf6c8-xsgcd    1/1     Running   1 (9m ago)   26m\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-dhv2z   1/1     Running   0            10s\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-gwds8   1/1     Running   0            10s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy2-84cbd84bfb-dhv2z -c shell2 bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z /]# ls\cf1\highlight2 
+\par \cf0\highlight0 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z /]# cd tmp/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z tmp]# ls\cf1\highlight2 
+\par \cf0\highlight0 ks-script-4luisyla  ks-script-o23i7rc2  ks-script-x6ei4wuu  persistent\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z tmp]# cd persistent/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z persistent]# vi praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z persistent]# cat praveen\cf1\highlight2 
+\par \cf0\highlight0 hii\cf1\highlight2 
+\par \cf0\highlight0 this is praveen\cf1\highlight2 
+\par \cf0\highlight0 bye\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-dhv2z persistent]# exit\cf1\highlight2 
+\par \cf0\highlight0 exit\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl get po\cf1\highlight2 
+\par \cf0\highlight0 NAME                         READY   STATUS    RESTARTS      AGE\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy-6b767bf6c8-xsgcd    1/1     Running   1 (10m ago)   27m\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-dhv2z   1/1     Running   0             90s\cf1\highlight2 
+\par \cf0\highlight0 pvdeploy2-84cbd84bfb-gwds8   1/1     Running   0             90s\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~# kubectl exec -it pvdeploy2-84cbd84bfb-gwds8 -c shell2 bash\cf1\highlight2 
+\par \cf0\highlight0 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-gwds8 /]# ls\cf1\highlight2 
+\par \cf0\highlight0 bin  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-gwds8 /]# cd tmp/persistent/\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-gwds8 persistent]# ls\cf1\highlight2 
+\par \cf0\highlight0 praveen\cf1\highlight2 
+\par \cf0\highlight0 [root@pvdeploy2-84cbd84bfb-gwds8 persistent]# exit\cf1\highlight2 
+\par \cf0\highlight0 exit\cf1\highlight2 
+\par \cf0\highlight0 root@ip-172-31-21-111:~#\cf1\highlight2 
+\par \cf7\highlight0 Remote side unexpectedly closed network connection\cf1\highlight2 
+\par 
+\par \cf8\highlight0\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\u9472?\cf1\highlight2 
+\par 
+\par \cf7\highlight0 Session stopped\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf9 <return>\cf0  to exit tab\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf9 R\cf0  to restart session\cf1\highlight2 
+\par \cf0\highlight0     - Press \cf9 S\cf0  to save terminal output to file\cf1\highlight2 
+\par \pard\cf0\highlight0\f2 
+\par }
+ 

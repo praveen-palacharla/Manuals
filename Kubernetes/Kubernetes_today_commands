@@ -1,0 +1,153 @@
+   6 minikube start
+   7 minikube status
+   8 clear
+   9 kubectl get ns
+  10 kubectl get pods -n praveen
+  11 kubectl get deployments -n praveen
+  12 kubectl get services -n praveen
+  13 kubectl get cm -n praveen
+  14 cls
+  15 kubectl create -f .\secret.yaml -n praveen
+  16 kubectl create -f .\secret.yaml -n praveen
+  17 kubectl create -f .\secret.yaml -n praveen
+  18 kubectl create -f .\secret.yaml
+  19 kubectl api-resources
+  20 kubectl get secrets
+  21 kubectl create -f .\run2.yaml
+  22 kubectl describe secret mysecret
+  23 kubectl describe pod my-secret-pod
+  24 kubectl create -f .\run3.yaml
+  25 kubectl describe pod my-secret-pod2
+  26 kubectl get secrets
+  27 kubectl describe secret mysecret
+  28 kubectl create -f .\run4.yaml
+  29 kubectl describe secret mysecret1
+  30 kubectl create -f .\run5.yaml
+  31 kubectl describe pod my-secret-pod3
+  32 kubectl exec my-secret-pod3 -- env
+  33 kubectl exec my-secret-pod2 -- env
+  34 kubectl exec my-secret-pod1 -- env
+  35 kubectl exec my-secret-pod -- env
+  36 kubectl create -f .\run6.yaml
+  37 kubectl create -f .\run6.yaml
+  38 kubectl get secrets
+  39 kubectl describe secret mysecret3
+  40 kubectl create -f .\run7.yaml
+  41 kubectl create -f .\run7.yaml
+  42 kubectl create -f .\run7.yaml
+  43 notepad run6.yaml
+  44 notepad run7.yaml
+  45 kubectl create -f .\run7.yaml
+  46 notepad run7.yaml
+  47 kubectl create -f .\run7.yaml
+  48 kubectl create -f .\run7.yaml --validate=false
+  49 notepad run7.yaml
+  50 kubectl create -f .\run7.yaml --validate=false
+  51 kubectl describe pod my-secret-pods
+  52 kubectl exec my-secret-pods -- env
+  53 kubectl get secrets
+  54 notepad .\run6.yaml
+  55 & minikube -p minikube docker-env --shell powershell | Invoke-Expression
+  56 docker images
+  57 mkdir app1
+  58 mkdir app2
+  59 mkdir app3
+  60 mkdir app4
+  61 dir
+  62 cd .\app1\
+  63 dir
+  64 docker build --help
+  65 docker images
+  66 docker build . -t .\docker-file.yaml
+  67 docker build .
+  68 docker build . -f .\docker-file.yaml
+  69 docker images
+  70 docker del redis nginx
+  71 docker delete redis nginx
+  72 docker rmi redis nginx
+  73 cd ..
+  74 cd .\app2\
+  75 docker build . -f .\docker-file.yaml
+  76 docker images
+  77 cd ..
+  78 cd .\app3\
+  79 docker build . -f .\docker-file.yaml
+  80 cd ..
+  81 cd .\app4\
+  82 docker build . -f .\docker-file.yaml
+  83 docker images
+  84 cd ..
+  85 docker rmi c94e5159676a redis httpd bash
+  86 docker images
+  87 docker rmi nginx nginx lrakai/microservices
+  88 docker rmi -f nginx nginx lrakai/microservices
+  89 cls
+  90 cd .\app1\
+  91 docker build . -f .\docker-file.yaml -t app1-image
+  92 docker images
+  93 docker images
+  94 cd ..
+  95 cd .\app2\
+  96 docker build . -f .\docker-file.yaml -t app2-image
+  97 cd ..
+  98 cd .\app3\
+  99 docker build . -f .\docker-file.yaml -t app3-image
+ 100 cd ..
+ 101 cd .\app4\
+ 102 docker build . -f .\docker-file.yaml -t app4-image
+ 103 docker images
+ 104 docker rmi redis nginx
+ 105 docker ps -a
+ 106 docket ps
+ 107 docker ps
+ 108 docker images
+ 109 docker rmi 3e42dd4e79c7
+ 110 cd ..
+ 111 docker rmi 3e42dd4e79c7
+ 112 docker rmi 3e42dd4e79c7 --force
+ 113 docker images
+ 114 cd .\app1\
+ 115 docker images
+ 116 cd ..
+ 117 kubectl get ns
+ 118 cd .\app1\
+ 119 kubectl create -f .\app1-dev-deployment.yaml -n praveen
+ 120 kubectl create -f .\app1-dev-deployment.yaml -n praveen
+ 121 kubectl describe deployment app1-dev-deployment -n praveen
+ 122 kubectl get pods -n praveen
+ 123 kubectl get pods -n praveen -o wide
+ 124 kubectl get replicaset
+ 125 kubectl get replicaset -n praveen
+ 126 kubectl config set-context --current --namespace=praveen
+ 127 kubectl get pods
+ 128 kubectl get replicas
+ 129 kubectl api-resources
+ 130 kubectl get ReplicaSet
+ 131 kubectl describe ReplicaSet app1-dev-deployment-75578f59dc
+ 132 cd ..
+ 133 cd .\app2\
+ 134 kubectl create -f .\app2-dev-deployment.yaml
+ 135 kubectl describe deployment app2-dev-deployment
+ 136 kubectl get ReplicaSet
+ 137 kubectl get pods -o wide
+ 138 kubectl get pods app1-dev-deployment
+ 139 kubectl get pods -l app-name=app1
+ 140 kubectl get pods -l app-name=app2
+ 141 cd ..
+ 142 cd .\app3\
+ 143 kubectl create -f .\app3-dev-deployment.yaml
+ 144 cd ..
+ 145 cd .\app4\
+ 146 kubectl create -f .\app4-dev-deployment.yaml
+ 147 kubectl get pods -l app-name!=app1
+ 148 kubectl get pods -l app-name!=app3
+ 149 kubectl get pods -l app-name!=app3 -o wide
+ 150 kubectl get pods -l 'environment in (app-name=app1,app-name=app4)'
+ 151 kubectl get pods -l 'environment in (app1,app4)'
+ 152 kubectl get pods
+ 153 kubectl get pods -l 'environment in (dev)'
+ 154 kubectl get pods -l 'app-name in (app1,app4)'
+ 155 kubectl get pods -l 'app-name in (app1,app3)'
+ 156 kubectl get pods -l 'app-name in (app1,app3)' && 'environ in (dev)'
+ 157 kubectl get pods -l 'app-name in (app1,app3),environ in (dev)'
+ 158 history
