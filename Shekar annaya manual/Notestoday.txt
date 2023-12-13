@@ -1,0 +1,162 @@
+Software    Hardware 
+
+Processor - 
+Primary memory/Temporary/Main  - RAM
+Secondary memory/permanent/persistent storage  -HArdisk,Cd,DVD,Pendrive
+
+
+  Processor types
+  Intel                   AMD    Apple
+
+8086					Pathlon
+80186					Ryzen
+80286                   athalon
+80386
+80486
+80586
+Pentium I
+Pentium II
+        III
+		 IV
+		 dual core
+		 core 2 duo 
+		 quad core
+		 octa core
+		 i3
+		 i5
+		 i7
+		 i9
+		 i11
+		 itanium
+		 Xenon
+		 
+		 
+Temporary memory RAM
+128 kb
+128 mb
+1gb
+2gb
+4gb
+8 gb
+16 gb
+32 gb
+4096 Gb
+
+
+SDRAM
+DDR 1
+DDR2
+DDR3
+DDR4
+LPDDR3/4
+
+
+Hardisk
+PATA (HDD) - Magnetic disk
+SATA 
+SSD - solid state drive
+M.2
+Optane memory - NVME
+
+
+
+Software
+
+
+System software
+Operating system
+
+TUI (textual User    Interface)       
+Unix
+Ms-dos
+IBM Os/2
+
+GUI (GRaphical USer Interface)
+Windows
+Windows 3.1
+3.11
+95
+97
+98
+2000
+ME/NT
+XP
+7 
+8 
+8.1
+10
+11
+
+Window server os
+
+Macntosh
+Leaproad
+Montesery
+
+
+Linux
+RHEL (REdhat enterprise Linux),Centos,Mandriva,Kali,Amazon Linux,Oracle Linux
+Ubuntu
+Fedora
+Debian
+
+
+
+
+
+firmware
+Elecronic Gadget
+
+Application software
+
+Languages
+High Level
+C,C++,Java,Python,Ruby,Scala,Fortran,Basic,Cobol,PLI,Koltin
+
+Packages
+Word
+powerpoint
+Photoshop
+Pagmaker
+Excel
+Tally
+
+
+Operating System
+
+File system
+Windows   
+Fat16
+Fat32
+Ntfs
+
+
+
+Linux
+Ext0
+ext1
+ext2
+ext3
+vfat
+Swap
+
+
+CD
+cdfs
+
+DVd
+dFs
+
+
+
+
+
+
+
+
+
+
+
+		 
+
+ 
